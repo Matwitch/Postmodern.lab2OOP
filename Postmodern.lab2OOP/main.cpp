@@ -4,7 +4,7 @@
 #include <vector>
 #include <algorithm>
 
-// ITERATOR ТА ITERABLE КЛАСИ
+// ITERATOR AND ITERABLE CLASSES
 template<typename T>
 class Iterator
 {
@@ -64,7 +64,7 @@ public:
 
 
 
-// Далі тут фейкова страктура даних з ітератором чисто для тесту, ніякого сенсу там нема :)
+// Utterly simple test classes, for demonstration purposes only, don't make any other sense.
 class int_iterator : public Iterator<int>
 {
 private:
@@ -130,7 +130,7 @@ public:
 };
 
 
-// Набір абстрактних property-based тестів для перевірки Iterable-складової довільної реалізації Iterable.
+// Set of property-based tests for checking Iterable-part of arbitrary Iterable implementation.
 template<typename T>
 bool Iterator_Correct_Size(Iterable<T>* seq, size_t seq_size)
 {
@@ -222,7 +222,7 @@ bool Sort_Correct2(Iterable<T>* seq, Iterable<T>* copy_seq)
 }
 
 
-// Загальний тест, який генерує випадкові послідовності і ганяє їх по тестам, визначеним зверху.
+// General test that generates random sequences and runs these tests defined above on them.
 bool Test(size_t tests_num, size_t max_seq_size)
 {
 	std::vector<std::vector<int>> test_sequences;
@@ -264,7 +264,7 @@ bool Test(size_t tests_num, size_t max_seq_size)
 }
 
 
-// Мейн :)
+// main :)
 int main()
 {
 	std::cout << Test(25, 200);
